@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTRICTED RESEARCH COMPENDIUM | Hema Vignesh Vinjamuri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="relative min-h-screen">
+    <div class="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
+    <div class="scanline"></div>
+    
+    <div class="relative z-10 container mx-auto px-4 py-8">
+        <header class="mb-8 p-4 data-panel border-l-4 border-green-700">
+            <h1 class="glitch-text text-3xl md:text-5xl font-bold text-white mb-2">RESTRICTED RESEARCH COMPENDIUM: HEMA VIGNESH VINJAMURI</h1>
+            <div class="flex flex-wrap justify-between items-center text-sm">
+                <p class="text-green-400">STATUS: <span class="text-yellow-400 status-indicator">ACTIVE DEPLOYMENT</span></p>
+            </div>
+        </header>
+
+        <div class="grid md:grid-cols-6 gap-6">
+            <nav class="md:col-span-1 data-panel p-4 rounded h-fit">
+                <div class="glitch-text text-xl text-green-400 mb-4">ACCESS LOGS</div>
+                <div class="space-y-4">
+                    <button onclick="openModule('personnel_profile')" class="access-button w-full text-left p-3 flex justify-between items-center text-xs">
+                        Personnel Record
+                        <span class="text-[8px] bg-green-900 px-1 rounded">ID</span>
+                    </button>
+                    <button onclick="openModule('operations')" class="access-button w-full text-left p-3 flex justify-between items-center text-xs">
+                        Deployment Log
+                        <span class="text-[8px] bg-green-900 px-1 rounded">08</span>
+                    </button>
+                    <button onclick="openModule('algos')" class="access-button w-full text-left p-3 flex justify-between items-center text-xs">
+                        Technical R&D
+                        <span class="text-[8px] bg-green-900 px-1 rounded">08</span>
+                    </button>
+                    <button onclick="openModule('publications')" class="access-button w-full text-left p-3 flex justify-between items-center text-xs">
+                        Research & Publications
+                        <span class="text-[8px] bg-green-900 px-1 rounded">15</span>
+                    </button>
+                    <button onclick="openModule('prizes')" class="access-button w-full text-left p-3 flex justify-between items-center text-xs">
+                        Commendations & Awards
+                        <span class="text-[8px] bg-green-900 px-1 rounded">13</span>
+                    </button>
+                    <button onclick="openModule('certificates')" class="access-button w-full text-left p-3 flex justify-between items-center text-xs">
+                        Verification & Training
+                        <span class="text-[8px] bg-green-900 px-1 rounded">16</span>
+                    </button>
+                    <button onclick="openModule('uplink')" class="access-button w-full text-left p-3 flex justify-between items-center text-xs border-l-2 border-red-600">
+    COMMUNICATIONS UPLINK
+    <span class="text-[8px] bg-red-900 text-red-200 px-1 rounded font-bold">LIVE</span>
+</button>
+                </div>
+
+                <div id="current-access" class="mt-8 p-4 border border-dashed border-green-600 hidden">
+                    <h3 class="text-xs text-green-400 mb-2">CURRENT ACCESS:</h3>
+                    <p class="text-white text-xs" id="access-display">No module selected</p>
+                </div>
+            </nav>
+
+            <main class="md:col-span-5 data-panel rounded p-6">
+                <!-- Mission Briefing Section -->
+                <div id="mission-briefing">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="glitch-text text-2xl text-white">MISSION BRIEFING</h2>
+                        <div class="flex space-x-2 text-xs">
+                            <span class="bg-red-900 text-red-300 px-2 py-1 rounded">TOP SECRET</span>
+                            <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded">EYES ONLY</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="data-container">
+                        <!-- Dynamic content will load here -->
+                    </div>
+                </div>
+
+                <!-- Data Details Modal -->
+                <div id="data-details" class="hidden data-panel p-6 rounded-lg border-l-4 border-yellow-500 mt-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="glitch-text text-xl text-white" id="data-title">DATA DETAILS</h3>
+                        <button onclick="closeDetails()" class="text-green-400 hover:text-white text-2xl font-bold close-btn">&times;</button>
+                    </div>
+                    <div id="data-content"></div>
+                </div>
+
+                <!-- Personnel Profile Module -->
+                <div id="personnel_profile" class="hidden">
+                    <div class="flex flex-col lg:flex-row gap-8 animate-fade-in">
+                        <div class="relative self-start flex-shrink-0 group">
+                            <div class="profile-frame p-1 bg-green-900 bg-opacity-30 border border-green-500">
+                                <img src="me.jpg" 
+                                     alt="Agent Hema Vignesh Vinjamuri" 
+                                     class="w-56 h-72 object-cover border border-green-900">
+                            </div>
+                            <div class="sophisticated-stamp">
+                                <div class="stamp-inner">
+                                    <span class="stamp-text">Confidential</span>
+                                    <span class="stamp-id">Hema Vignesh Vinjamuri</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-grow space-y-6">
+                            <div class="border-b border-green-700 pb-2">
+                                <h2 class="glitch-text text-3xl text-white font-bold">HEMA VIGNESH VINJAMURI</h2>
+                                <p class="text-green-500 text-sm tracking-widest">STUDENT | TECH ANALYST | AUTHOR</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="dossier-sub-panel p-4">
+                                    <h3 class="text-green-400 text-xs mb-2 underline">ACADEMIC CLEARANCE</h3>
+                                    <ul class="text-white text-sm space-y-1">
+                                        <li><span class="text-green-600">B.Tech (CSE):</span> 8.08 CGPA</li>
+                                        <li><span class="text-green-600">Intermediate (MPC):</span> 96%</li>
+                                        <li><span class="text-green-600">Secondary (10th):</span> 91.67%</li>
+                                    </ul>
+                                </div>
+
+                                <div class="dossier-sub-panel p-4">
+                                    <h3 class="text-green-400 text-xs mb-2 underline">CORE SPECIALIZATIONS</h3>
+                                    <ul class="text-white text-sm space-y-1">
+                                        <li>Algorithmic System Design</li>
+                                        <li>Network & Cyber Infrastructure</li>
+                                        <li>Semantic & Linguistic Engineering</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="dossier-sub-panel p-4 bg-green-900 bg-opacity-10 border-l-2 border-green-500">
+                                <h3 class="text-green-400 text-xs mb-1 uppercase">STRATEGIC PROFILE</h3>
+                                <p class="text-white text-xs leading-relaxed italic">
+                                    Technical Analyst and Author specializing in the intersection of advanced algorithmic logic and strategic communication. Demonstrated expertise in architecting AI-driven educational and cognitive frameworks—including the WISE system. Leverages project management discipline and multidisciplinary research to deliver high-fidelity administrative and technical excellence.                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder for other modules -->
+                <div id="operations" class="hidden">
+                    <h2 class="glitch-text text-2xl text-white mb-6">OPERATIONS LOG</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="data-panel p-6">
+                            <h3 class="text-green-400 mb-2">OP-47</h3>
+                            <p class="text-white text-sm">AI Deployment - Phase 1 Complete</p>
+                            <span class="text-green-500 text-xs mt-2 block">STATUS: SUCCESS</span>
+                        </div>
+                        <button onclick="openModule('prizes')" class="access-button w-full text-left p-3 flex justify-between items-center text-xs">
+    FIELD REPORTS
+    <span class="text-[8px] bg-green-900 px-1 rounded">06</span>
+</button>
+
+<div id="prizes" class="hidden">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="glitch-text text-2xl text-white uppercase">Field Deployment Reports</h2>
+        <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-[10px]">MISSION SUCCESS</span>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="prizes-container">
+        </div>
+</div>
+<div id="certificates" class="hidden">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="glitch-text text-2xl text-white uppercase font-bold tracking-tighter">Credential Clearance Vault</h2>
+        <div class="flex items-center space-x-2">
+            <span class="status-indicator w-3 h-3 bg-green-500 rounded-full"></span>
+            <span class="text-green-500 text-[10px] font-bold">VERIFIED BY THE AGENCY</span>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="certificates-container">
+        </div>
+</div>
+<div id="algos" class="hidden">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="glitch-text text-2xl text-white uppercase">Field Deployment Reports</h2>
+        <span class="bg-blue-900 text-blue-300 px-2 py-1 rounded text-[10px]">MISSION SUCCESS</span>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="algos-container">
+        </div>
+</div>
+
+                        <!-- Add more operations -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="mt-8 p-4 border-t border-green-800 text-center text-green-500 text-sm">
+    <p>ACCESS TO THIS COMPENDIUM IS RESTRICTED. ALL INTEL IS PROPERTY OF THE AGENCY.</p>
+</footer>
+
+<script src="script.js"></script> 
+</body>
+</html>

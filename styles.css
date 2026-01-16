@@ -1,0 +1,195 @@
+/* Core Styling - Cinematic "Heads-Up Display" (HUD) Aesthetic */
+body {
+    font-family: 'Inter', 'Share Tech Mono', monospace;
+    background-color: #020617; /* Near Black Azure */
+    color: #00f2ff; /* Electric Cyan Text */
+    background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b121122e-12a4-411d-926f-341121170120.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color-dodge; /* Makes the circuit lines "glow" against the dark */
+}
+
+/* Personnel Profile Specifics */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.dossier-sub-panel {
+    background: rgba(15, 23, 42, 0.85); 
+    border: 1px solid rgba(0, 242, 255, 0.2); 
+    box-shadow: inset 0 0 15px rgba(0, 242, 255, 0.05);
+}
+
+/* Sophisticated Classified Stamp - Cinematic "Digital Approval" Blue */
+.sophisticated-stamp {
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    transform: rotate(-20deg);
+    pointer-events: none;
+    z-index: 100;
+}
+
+.stamp-inner {
+    border: 4px double rgba(185, 28, 28, 0.8); /* Faded Crimson Ink */
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stamp-text {
+    color: rgba(185, 28, 28, 0.9);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.0rem;
+    letter-spacing: 2px;
+    line-height: 0.8;
+    text-transform: uppercase;
+}
+
+.stamp-id {
+    color: rgba(185, 28, 28, 0.7);
+    font-size: 0.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(185, 28, 28, 0.4);
+    margin-top: 2px;
+    padding-top: 2px;
+}
+
+/* Profile Photo Effect - The "Digital Operative" look */
+.profile-frame img {
+    filter: grayscale(100%) brightness(1) contrast(1) sepia(0%) hue-rotate(160deg); /* Pure Cyber Blue */
+    border: 1px solid #00f2ff;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.794);
+}
+
+.profile-frame:hover img {
+    filter: grayscale(0%) contrast(1.1) brightness(1);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.711);
+}
+
+/* HUD Typography */
+/* Tone down the "Glow" for a more formal look */
+.glitch-text {
+    text-shadow: none; /* Remove the neon glow */
+    color: #f8fafc; /* Pure white/silver for authority */
+    letter-spacing: 1px;
+}
+
+/* Make the blue borders thinner and more subtle */
+.data-panel {
+    background-color: rgba(15, 23, 42, 0.98); /* Less transparent, more solid */
+    border: 1px solid #334155; /* Muted slate instead of bright cyan */
+}
+
+/* Use the cyan ONLY as a small accent (like a status light) */
+.status-indicator {
+    color: #38bdf8; /* Soft Sky Blue instead of Electric Cyan */
+}
+
+/* Buttons - Cinematic Glow Toggle */
+.access-button {
+    background-color: rgba(30, 64, 175, 0.2); /* Deep Azure Tint */
+    border: 1px solid rgba(0, 242, 255, 0.737);
+    color: #bae6fd;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
+}
+
+.access-button:hover {
+    background-color: rgba(0, 242, 255, 0.15);
+    color: #fff;
+    border-color: #00f2ff;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    transform: translateX(5px);
+}
+
+/* Animations */
+/**.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.2), transparent);
+    animation: scan 4s linear infinite;
+    z-index: 5;
+    pointer-events: none;
+}**/
+
+@keyframes scan {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+/* Dialog Box - "The Central Core" */
+#data-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    z-index: 2000;
+    background-color: rgba(2, 6, 23, 0.98);
+    border: 2px solid #00f2ff;
+    border-top: 8px solid #00f2ff;
+    box-shadow: 0 0 60px rgba(0, 242, 255, 0.2);
+}
+
+#data-details-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(30, 58, 138, 0.4) 0%, rgba(2, 6, 23, 0.95) 100%);
+    z-index: 1500;
+}
+
+/* Algorithm Lab Theming - Pure Movie Logic Colors */
+#stage {
+    background: radial-gradient(circle, #1e293b 0%, #020617 100%);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+}
+
+.active-tectonic { background: #00f2ff !important; box-shadow: 0 0 20px #00f2ff; color: #000; }
+.active-pulse { background: #38bdf8 !important; box-shadow: 0 0 20px #38bdf8; }
+.active-quantum { background: #0ea5e9 !important; border: 2px solid white; animation: pulse 1s infinite; }
+
+#narrative {
+    font-family: 'Share Tech Mono', monospace;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00f2ff;
+    padding: 15px;
+    border-left: 4px solid #00f2ff;
+    text-shadow: 0 0 5px rgba(0, 242, 255, 0.5);
+}
+
+/* Custom Scrollbar - Cyber Blue */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #020617;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e40af;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #00f2ff;
+}
