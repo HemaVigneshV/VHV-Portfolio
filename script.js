@@ -211,7 +211,7 @@ operations: [
             id: 'fr-12', 
             code: 'FR-AFO1', 
             title: 'AFOSEC LITERARY LEAD', 
-            summary: '2023-2024 DEPLOYMENT', 
+            summary: '2024 DEPLOYMENT', 
             desc: 'Coordinated literary events for the national-level fest AFOSEC-2024.',
             image: 'afo.jpeg', 
             status: 'VERIFIED' 
@@ -579,3 +579,4 @@ function openModule(moduleName) {
     }
 
 }
+
